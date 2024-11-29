@@ -1,0 +1,16 @@
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ellebucket27
+  Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-047126e50991d067b
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: 0
+          SubnetId: subnet-00e0777b85ee71401  # Replace with your subnet ID
+          GroupSet:
+            - sg-090f38bf9a41a16cb
